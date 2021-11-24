@@ -19,19 +19,18 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (NULL);
 	temp = lst;
-	while (temp -> next)
+	while (temp -> next != NULL)
 	{
 		temp = temp -> next;
 	}
 	return (temp);
 }
-/*
-int main()
+/*int main()
 {
 	t_list *nd1 = ft_lstnew("taha");
 	t_list	*nd2 = ft_lstnew("bbbb");
 	nd1 -> next =nd2;
 	nd2 -> next = NULL;
-	printf("%s",ft_lstlast(nd1)->content);
-	printf("\n%s", nd2->content);
+	printf("%s",(char*)ft_lstlast(nd1)->content);
+	printf("\n%s", (char*)nd2->content);
 }*/
