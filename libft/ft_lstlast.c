@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   last.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnaceur <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 23:12:22 by tnaceur           #+#    #+#             */
-/*   Updated: 2021/11/24 15:42:10 by tnaceur          ###   ########.fr       */
+/*   Created: 2021/11/24 12:00:23 by tnaceur           #+#    #+#             */
+/*   Updated: 2021/11/24 15:41:28 by tnaceur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t			i;
-	unsigned char	*s1;
+	t_list	*temp;
 
-	i = 0;
-	s1 = (unsigned char *)s;
-	while (i < n)
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp -> next)
 	{
-		if (s1[i] == (char)c)
-			return ((void *)s1 + i);
-		i++ ;
+		temp = temp -> next;
 	}
-	return (0);
+	return (temp);
 }
+/*
+int main()
+{
+	t_list *nd1 = ft_lstnew("taha");
+	t_list	*nd2 = ft_lstnew("bbbb");
+	nd1 -> next =nd2;
+	nd2 -> next = NULL;
+	printf("%s",ft_lstlast(nd1)->content);
+	printf("\n%s", nd2->content);
+}*/

@@ -46,9 +46,11 @@ SRCS =	ft_atoi.c\
 B_SRCS =	ft_lstnew.c\
 			ft_lstadd_front.c\
 			ft_lstsize.c\
+			ft_lstlast.c\
 
 OBJS = $(SRCS:.c=.o)
 B_OBJS = $(B_SRCS:.c=.o)
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 AR = @ar -rcs
 
